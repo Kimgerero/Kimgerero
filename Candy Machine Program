@@ -1,0 +1,68 @@
+package KDG'sCandyMachine;
+
+import java.util.Scanner;
+public class GereroKimActivity2 {
+
+
+
+
+static Scanner s = new Scanner(System.in);
+
+public static int Choice(){
+  int price = -1;
+ System.out.println("Products Available:");
+ System.out.println("1.       Candy       [2 pesos]");
+ System.out.println("2.       Chips       [10 pesos]");
+ System.out.println("3.       Gum         [5 pesos]");
+ System.out.println("4.       Cookies     [20 pesos]");
+ 
+ 
+ System.out.println();
+ System.out.print("Which Candies do you like to purchase? (Select numbers): ");
+ String Choices = s.next().toUpperCase();
+ 
+ if(Choices.equals("1")){
+   price = 2;
+   return  2;
+ }
+  else if(Choices.equals("2")){
+    price = 10;
+    return 10;
+  }
+  else if(Choices.equals("3")){
+    price = 5;
+    return 5;
+  }
+  else if(Choices.equals("4")){
+    price = 20;
+    return 20;
+  }
+  else{
+    return price;
+  }
+}
+
+public static void Dispenser(int Money,int CandiesPrice){
+  if(Money > CandiesPrice){
+    System.out.println("Thank you for choosing this machine");
+    System.out.println("Here's your Order, I hope  you will like it!enjoy it!");
+    int Change = Money - CandiesPrice;
+    System.out.println("Here's your = " + Change + " in Change, Thank you for coming!!"); 
+    System.out.println();
+System.out.println("Thank you for buying!Come Again!");
+  }
+  else{
+    System.out.println(" Purchase unsuccesful sorry your money is not enough, Here's your " + Money + "your Change");
+  }
+}
+
+public static void main(String[] args){
+  System.out.println("Welcome to KDG's Candy Machine");
+  System.out.print("Enter your money's that  you have : ");
+  int Money = s.nextInt();
+  
+ int CandiesPrice = Choice();
+ 
+ Dispenser(Money, CandiesPrice);
+}
+}
